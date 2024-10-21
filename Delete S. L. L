@@ -1,0 +1,23 @@
+struct node *delete(struct node * head)
+{ 
+struct node *temp=NULL,*p=NULL;
+int pos,i;
+printf("\n enter position to delete:");
+scanf("%d",&pos);
+for(temp=head,i=1;i<=pos-1&&temp->next!=NULL;i++)
+{ 
+temp=temp->next;
+}
+if(temp->next!=NULL)
+{
+p=temp->next;
+printf("\n the deleted element is %d",p->data);
+temp->next=p->next;
+free(p);
+}
+else 
+{
+printf("\n position out of order\n");
+} 
+return (head);
+}
