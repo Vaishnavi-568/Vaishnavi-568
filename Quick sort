@@ -1,0 +1,35 @@
+quicksort
+#include<stdio.h>
+void quicksort(int a[],int lb,int up)
+{int j;
+if(lb<up)
+{j=partition(a,lb,up);
+quicksort(a,lb,j-1);
+quicksort(a,j+1,up);
+}}
+partition(int a[],int lb,int up)
+{
+int i,j,pivot,temp;
+i=lb+1;j=up;
+pivot=a[lb];
+do{
+while((a[i]<pivot)&&(i<=up))i++;
+while((a[j]>pivot)&&(j>lb))j--;
+if(i<j){
+temp=a[i];
+a[i]=a[j];
+a[j]=temp;
+}}
+while(i<j);
+a[lb]=a[j];a[j]=pivot;return j;
+}void main()
+{int i,n,a[10];
+printf("\nHow Many Values:");
+scanf("%d",&n);
+printf("\nEnter Actual Values:");
+for(i=0;i<n;i++)
+{scanf("%d",&a[i]);}
+quicksort(a,0,n-1);
+printf("\nThe Sorted Elements Are\n");
+for(i=0;i<n;i++)
+{printf("%d\t",a[i]);}} 
