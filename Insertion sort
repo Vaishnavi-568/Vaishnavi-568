@@ -1,0 +1,25 @@
+insertionsort
+#include<stdio.h>
+void insertion(int x[],int n)
+{
+int k,i,key;
+for(k=1;k<n;k++)
+{
+key=x[k];
+for(i=k-1;x[i]>key && i>=0;i--)
+x[i+1]=x[i];
+x[i+1]=key;
+}}
+void main()
+{
+int i,n,x[10];
+void insertion(int x[],int);
+printf("\nHow Many Values:");
+scanf("%d",&n);
+printf("Enter Actual Values:\n");
+for(i=0;i<n;i++)
+{scanf("%d",&x[i]);
+}insertion(x,n);
+printf("\nThe Sorted Elements Are:\n");
+for(i=0;i<n;i++){printf("%d\t",x[i]);
+}} 
