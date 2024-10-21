@@ -1,0 +1,28 @@
+struct node *insert(struct node * head)
+{ 
+struct node *temp=NULL,*p=NULL;
+int pos,i;
+printf("\n enter position:");
+scanf("%d",&pos);
+for(temp=head,i=1;i<=pos-1&&temp!=NULL;i++)
+{ 
+temp=temp->next;
+}
+if(temp!=NULL)
+{
+printf("\n enter the value to insert in s.l.l");
+p=(struct node *) malloc(sizeof(struct node));
+scanf("%d",p->data);
+p->next=NULL;
+p->next=temp->next;
+temp->next=p;
+}
+else 
+{
+printf("\n position out of order\n");
+} 
+return (head);
+}
+
+
+
