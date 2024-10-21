@@ -1,0 +1,25 @@
+selectionsort
+#include<stdio.h>
+void selection(int a[],int n)
+{int i,j,position,temp;
+for(i=0;i<n-1;i++)
+{position=i;for(j=i+1;j<n;j++)
+{
+if(a[position]>a[j])position=j;
+}
+if(position!=i){temp=a[i];
+a[i]=a[position];
+a[position]=temp;}}
+}void main()
+{int i,n,a[10];
+printf("\nHow many values:");
+scanf("%d",&n);
+printf("Enter Actual Values:\n");
+for(i=0;i<n;i++)
+{scanf("%d",&a[i]);}
+selection(a,n);
+printf("\nThe Sorted Elements Are:\n");
+for(i=0;i<n;i++)
+{
+printf("%d\t",a[i]);
+}}
