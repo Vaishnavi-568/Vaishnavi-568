@@ -1,0 +1,21 @@
+linear_searching
+#include<stdio.h>
+int linsearch(int x[],int n,int key)
+{int i;
+for(i=0;i<n;i++){
+if(x[i]==key)return i;
+}return -1; 
+// element not found}
+void main()
+{int x[10],i,n,key,k;
+printf("\nHow Many Values:");
+scanf("%d",&n);
+printf("\nEnter Actual Values:\n");
+for(i=0;i<n;i++)
+{scanf("%d",&x[i]);
+}printf("\nEnter Values To Be Searched:\n");
+scanf("%d",&key);
+k=linsearch(x,n,key);
+if(k==-1);
+printf("\nThe Element Is Found At Loaction:%d\n",k);
+}
