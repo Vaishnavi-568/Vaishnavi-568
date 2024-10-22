@@ -1,0 +1,39 @@
+singly.c
+#include<stdio.h>
+#include<stdlib.h>
+#include"singly.h"
+#include<malloc.h>
+void main()
+{
+struct node *create();
+struct node *insert();
+int count();
+void display();
+int x,ch,q=0;
+do
+{
+struct node *head=NULL;
+head=(struct node *)malloc(sizeof(struct node));
+head->next=NULL;
+do
+{
+printf("\n1.create\n2.insert\n 3.count total no 4.display\n5.exit\n");
+printf("Enter the choice : ");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1: create(head); 
+display(head);
+break;
+case 2: insert(head);
+break;
+case 3: count(head);
+printf("the total no. of elements are %d");
+break; 
+case 4: display (head); 
+break;
+case 5: q=1; 
+break;
+}
+} while(q==0);
+}
