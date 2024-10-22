@@ -1,0 +1,107 @@
+struct node
+{
+int data;
+struct node *next;
+};
+struct node *create(struct node *head)
+{
+struct node *temp=NULL,*p=NULL;
+{
+int n,i,x;
+printf("\n How many values : ");
+scanf("%d",&n);
+temp=head;
+for(i=0;i<n;i++)
+{
+printf("\n Enter actual value : ");
+p=(struct node*)malloc(sizeof(struct node));
+scanf("%d",&p->data);
+p->next=NULL;
+temp->next=p;
+temp=p;
+}
+return (head);
+}
+void display()
+{
+struct node *temp=NULL;
+temp=head->next;
+do
+{
+printf("%d",temp->data);
+temp=temp->next;
+}
+while(temp!=NULL);
+}
+struct node *insert(struct node *head)
+{
+struct node *temp=NULL,*p=NULL;
+int pos,i;
+printf(" \n Enter position : ");
+scanf("%d",&pos);
+for(temp=head,i=1;i<pos-1 && temp!=NULL;i++)
+{
+temp=temp->next;
+}
+if(temp!=NULL)
+printf("\n Enter the value to insert in S.L.L: ");
+p=(struct node *)malloc(sizeof(struct node));
+scanf("%d",&p->data);
+p->next=NULL;
+p->next=temp->next;
+temp->next=p;
+}
+else
+{
+printf"\n position out of order\n");
+}
+return(head);
+}
+struct node *delete(struct node *head)
+{
+struct node *temp=NULL,*p=NULL;
+int i,pos;
+printf("\n Enter position to delete : ");
+scanf("%d",&pos);
+for(i=1,temp=head;i<pos-1 && temp->next!=NULL;i++)
+{
+temp=temp->next;
+if(temp->next!NULL)
+{
+p=temp->next;
+printf("\n the deleted elements is %d",p->data);
+temp->next=p->next;
+free(p);
+}
+else
+{
+printf"\n position out of order\n");
+}
+return(head);
+}
+void search(struct node *head,int key)
+{
+struct node *temp=NULL;
+int pos=1;
+temp=head->next;
+do
+{
+if(temp->data==key)
+return pos;
+pos++;
+temp=temp->next;
+}while(temp!=NULL);
+return -1;
+}
+void count(struct node *head)
+{
+struct node *temp=NULL;
+int c=0;
+temp=head->next;
+do
+{
+c++;
+temp=temp->next;
+}while(temp!=NULL);
+return c;
+}
